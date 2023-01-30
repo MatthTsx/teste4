@@ -42,6 +42,40 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  Jogador1      Game[]    @relation("1")
+  Jogador2      Game[]    @relation("2")
+  wins          Int       @default(0)
+  loses         Int       @default(0)
+}
+
+model Game {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  full    Boolean
+  user1   User?   @relation("1", fields: [userId], references: [id])
+  userId  String? @db.ObjectId
+  user2   User?   @relation("2", fields: [user2Id], references: [id])
+  user2Id String? @db.ObjectId
+  Ganho   Boolean @default(false)
+  P1_Turn String?
+
+  Board   Board  @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  boardId String @db.ObjectId
+}
+
+model Pieces {
+  id     String    @id @default(auto()) @map("_id") @db.ObjectId
+  pieces Boolean[] @default([true, true, true, true, true])
+
+  Board1   Board?  @relation(fields: [board1Id], references: [id], onDelete: Cascade)
+  board1Id String? @db.ObjectId
+}
+
+model Board {
+  id    String   @id @default(auto()) @map("_id") @db.ObjectId
+  Board String[] @default(["0", "0", "0", "0", "0", "0", "0", "0", "0"])
+
+  P_Pieces Pieces[]
+  Game     Game[]
 }
 
 model VerificationToken {

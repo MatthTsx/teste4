@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    * > * {
+        @apply text-cor1
+    }
+    body{
+        @apply bg-cor1 overflow-hidden
+    }
+    ._btn{
+        @apply text-cor1 font-semibold rounded-full p-1 drop-shadow-xl scale-95
+        transition-all hover:-rotate-12 hover:scale-110
+    }
+}

@@ -1,4 +1,6 @@
 import '@/styles/globals.css'
+import Header from './Header'
+import LogButton from './LogButton'
 import Providers from './providers'
 
 export default function RootLayout({
@@ -15,6 +17,7 @@ export default function RootLayout({
       <head />
       <body>
         <Providers>
+          <Header><LogButton/></Header>
           {children}
         </Providers>
       </body>
