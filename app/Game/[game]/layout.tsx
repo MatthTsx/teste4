@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react'
+import React, { JSXElementConstructor, ReactElement } from 'react'
 
-async function RootLayout({children} : {children: ReactElement}) {
+function RootLayout({children} : {children:ReactElement<any, string | JSXElementConstructor<any>>}) {
 
   return (
     <div className='h-full w-full flex justify-center'>
