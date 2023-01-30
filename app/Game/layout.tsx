@@ -1,6 +1,6 @@
 import React from 'react'
 
-function layout({children}:{children:React.ReactElement}) {
+function RootLayout({children}:{children:React.ReactElement}) {
   return (
     <div className='h-full w-full flex justify-center'>
       {children}
@@ -8,4 +8,4 @@ function layout({children}:{children:React.ReactElement}) {
   )
 }
 
-export default layout
+export default RootLayout

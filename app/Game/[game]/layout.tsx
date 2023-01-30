@@ -7,7 +7,7 @@ type PageProps = {
   }
 }
 
-async function layout({children, params:{game}} : PageProps) {
+async function RootLayout({children, params:{game}} : PageProps) {
 
   return (
     <div className='h-full w-full flex justify-center'>
@@ -16,4 +16,4 @@ async function layout({children, params:{game}} : PageProps) {
   )
 }
 
-export default layout
+export default RootLayout
