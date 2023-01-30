@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react'
+import React, { ReactElement } from 'react'
 
 type PageProps = {
-  children: ReactNode,
+  children: ReactElement,
   params: {
     game: string
   }
